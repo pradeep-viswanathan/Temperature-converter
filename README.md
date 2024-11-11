@@ -38,7 +38,7 @@ This project is a responsive Temperature Converter website created as part of my
 
 ## Demo
 
-https://pradeep-viswanathan.github.io/Tempertaure-converter/
+https://pradeep-viswanathan.github.io/Temperature-converter/
 
 ## License
 
