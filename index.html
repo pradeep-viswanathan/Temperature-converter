@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    <title>Dynamic Temperature Converter</title>
+    <link rel="stylesheet" href="/styles.css"/>
+    <link rel="icon" href="/temperature-sensor.png"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature converter</h1>
+        <div class="converter_row">
+            <div class="col">
+                <label>Fahrenheit</label>
+                <input type="number" id="fahrenheit" placeholder="°F">
+            </div>
+            <div class="col">
+                <label>Celsius</label>
+                <input type="number" id="celsius" placeholder="°C">
+            </div>
+            <div class="col">
+                <label>Kelvin</label>
+                <input type="number" id="kelvin" placeholder="K">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const celsius=document.getElementById('celsius');
+        const fahrenheit=document.getElementById('fahrenheit');
+        const kelvin=document.getElementById('kelvin');
+
+        celsius.oninput = function(){
+            let f = (parseFloat(celsius.value) * 9 ) / 5 + 32;
+            fahrenheit.value = parseFloat(f.toFixed(2));
+
+            let k = (parseFloat(celsius.value) + 273.15);
+            kelvin.value = parseFloat(k.toFixed(2));
+        };
+        fahrenheit.oninput = function(){
+            let c = ((parseFloat(fahrenheit.value) - 32) * 5 )/ 9;
+            celsius.value = parseFloat(c.toFixed(2));
+
+            let k = (parseFloat(fahrenheit.value) - 32) * 5 / 9 + 273.15;
+            kelvin.value = parseFloat(k.toFixed(2));
+        };
+        kelvin.oninput = function(){
+            let c = (parseFloat(kelvin.value) - 273.15);
+            celsius.value = parseFloat(c.toFixed(2));
+
+            let f = (parseFloat(kelvin.value) - 273.15) * 9 / 5 + 32;
+            fahrenheit.value = parseFloat(f.toFixed(2));
+        };
+    </script>
+
+</body>
+</html>
