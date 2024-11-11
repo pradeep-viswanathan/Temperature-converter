@@ -1,6 +1,3 @@
-Here's a README file template for your Temperature Converter project:
-
----
 
 # Temperature Converter
 
